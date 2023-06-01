@@ -1,30 +1,55 @@
 package taller_g8;
 
+/**
+ * @author ggabo
+ */
 public class Destino {
-	public String nombre;
-	public int precio;
-	
-	public Destino(String nombre, int precio) {
-		super();
-		this.nombre = nombre;
-		this.precio = precio;
-	}
-
-	public String getNombre() {
-		return nombre;
-	}
-
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
-
-	public int getPrecio() {
-		return precio;
-	}
-
-	public void setPrecio(int precio) {
-		this.precio = precio;
-	}
-	
-	
+/**
+ * Nombre del destino.
+ */
+private String nombre;
+/**
+ * Precio del destino.
+ */
+private int precio;
+/**
+ * Constructor.
+ * @param name
+ * @param price
+ */
+public Destino(final String name, final int price) {
+super();
+this.nombre = name;
+this.precio = price;
+}
+/**
+ * getter nombre.
+ * @return
+ * retorna un string.
+ */
+public String getNombre() {
+return nombre;
+}
+/**
+ * setter nombre.
+ * @param name
+ */
+public void setNombre(final String name) {
+this.nombre = name;
+}
+/**
+ * getter precio.
+ * @return
+ * retorna un entero
+ */
+public int getPrecio() {
+return precio;
+}
+/**
+ * setter precio.
+ * @param price
+ */
+public void setPrecio(final int price) {
+this.precio = price;
+}
 }
