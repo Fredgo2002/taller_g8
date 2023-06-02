@@ -1,4 +1,4 @@
-package taller_g8;
+package tallerg8;
 
 /**
  * @author ggabo

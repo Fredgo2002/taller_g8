@@ -1,5 +1,5 @@
 //CHECKSTYLE:OFF
-package taller_g8;
+package tallerg8;
 //CHECKSTYLE:ON
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -10,9 +10,12 @@ public class Main {
 	public static void main(String[] args) {
 //CHECKSTYLE:ON
 		// TODO Auto-generated method stub
-		PaqueteVacaciones.popularLoc.add(new Destino("Paris", 500));
-		PaqueteVacaciones.popularLoc.add(new Destino(
-				"New York City", 600));
+		final int precioParis = 500;
+		final int precioNewYork = 600;
+		PaqueteVacaciones.getPopularLoc().add(new Destino(
+				"Paris", precioParis));
+		PaqueteVacaciones.getPopularLoc().add(new Destino(
+				 "New York City", precioNewYork));
 		Scanner scanner = new Scanner(System.in);
         String destino = "";
         int numViajeros = 0;

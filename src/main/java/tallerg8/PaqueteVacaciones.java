@@ -1,9 +1,53 @@
-package taller_g8;
+package tallerg8;
 
 import java.util.ArrayList;
 
 
 public class PaqueteVacaciones {
+/** .
+ * precio inicial del paquete
+*/
+private static final  int INITIALPRICE = 1000;
+
+/** .
+ * Primer limite para el numero de viajeros
+*/
+private static final  int LIMITENUMTRAVELERS1 = 4;
+/** .
+ * Segundo limite para el numero de viajeros
+*/
+private static final  int LIMITENUMTRAVELERS2 = 10;
+
+/** .
+ * Primer descuento
+*/
+private static final  float DESCUENTO1 = 0.1f;
+/** .
+ * Segundo descuento
+*/
+private static final  float DESCUENTO2 = 0.2f;
+
+/** .
+ * Duracion 1 del viaje que recibe penalidad
+*/
+private static final  int DURACIONPENALIDAD1 = 7;
+/** .
+ * Duracion 2 del viaje que recibe penalidad
+*/
+private static final  int DURACIONPENALIDAD2 = 30;
+/**.
+ * Penalidad que se otorga a los viajes
+ */
+private static final  int PENALIDAD1 = 200;
+
+/**.
+ * Minimo numero de viajeros para que el viaje sea valido
+ */
+private static final  int MINVALIDTRAVELERS = 200;
+
+
+
+
 /**
  * nombre del destino.
  */
@@ -19,7 +63,7 @@ private int durationVac;
 /**
  * costo base.
  */
-private int baseCost = 1000;
+private int baseCost = INITIALPRICE;
 /**
  * penalidades.
  */
@@ -49,22 +93,23 @@ this.durationVac = duracion;
  * setea el descuento.
  */
 public void setDiscount() {
-if (this.numTravelers > 4 && this.numTravelers<10 ) {
-this.descuento = 0.1;
+if (this.numTravelers > LIMITENUMTRAVELERS1
+&& this.numTravelers < LIMITENUMTRAVELERS2) {
+this.descuento = DESCUENTO1;
 }
-if (this.numTravelers > 10) {
-this.descuento=0.2;
+if (this.numTravelers > LIMITENUMTRAVELERS2) {
+this.descuento = DESCUENTO2;
 }
 }
 /**
  * setea las penalidades.
  */
 public void setPenalties() {
-if (this.durationVac < 7) {
-this.penalty+=200;
+if (this.durationVac < DURACIONPENALIDAD1) {
+this.penalty += PENALIDAD1;
 }
-if (this.durationVac > 30 || this.numTravelers == 2) {
-this.penalty = 200;
+if (this.durationVac > DURACIONPENALIDAD2 || this.numTravelers == 2) {
+this.penalty = PENALIDAD1;
 }
 }
 /**
@@ -73,7 +118,7 @@ this.penalty = 200;
  * retorna un booleano
  */
 public boolean isValidPackage() {
-if (this.numTravelers > 80) {
+if (this.numTravelers > MINVALIDTRAVELERS) {
 return false;
 }
 return true;
