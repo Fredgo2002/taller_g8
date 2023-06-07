@@ -21,6 +21,11 @@ public class Main {
         "Paris", precioParis));
     PaqueteVacaciones.getPopularLoc().add(new Destino(
         "New York City", precioNewYork));
+
+    AddOn.getAddOns().add(new AddOn("All-Inclusive Package", 200));
+    AddOn.getAddOns().add(new AddOn("Adventure Activities Package", 150));
+    AddOn.getAddOns().add(new AddOn("Spa and Wellness Package", 100));
+
     Scanner scanner = new Scanner(System.in);
     String destino = "";
     int numViajeros = 0;
@@ -39,6 +44,7 @@ public class Main {
     while (!validNumViajeros) {
       try {
         numViajeros = scanner.nextInt();
+        scanner.nextLine();
         if (numViajeros <= 0) {
           System.out.println("Error: Ingrese nuevamente: ");
         } else {
@@ -54,6 +60,8 @@ public class Main {
     while (!validDuracionViaje) {
       try {
         duracionViaje = scanner.nextInt();
+        scanner.nextLine();
+
         if (duracionViaje <= 0) {
           System.out.println("Error: Ingrese nuevamente: ");
         } else {
@@ -62,9 +70,9 @@ public class Main {
       } catch (InputMismatchException e) {
         System.out.println("Error: Ingrese nuevamente: ");
         scanner.nextLine();
+
       }
     }
-    scanner.close();
     PaqueteVacaciones test = new PaqueteVacaciones(destino,
         numViajeros, duracionViaje);
     if (!test.isValidPackage()) {
@@ -75,8 +83,21 @@ public class Main {
     test.setDiscount();
     test.setPenalties();
     test.isPopular();
+
+    for (AddOn n : AddOn.getAddOns()) {
+        System.out.println("Quiere agregar el adicional: "
+           + n.getNombre() + "? (si, no) ");
+
+        final String res = scanner.nextLine();
+        if (res.equals("si")) {
+            test.getAddOns().add(n);
+        }
+
+    }
+
     double costoFinal = test.calculateCost();
     System.out.print("El costo final de su viaje es de: " + costoFinal);
+    scanner.close();
 
   }
 

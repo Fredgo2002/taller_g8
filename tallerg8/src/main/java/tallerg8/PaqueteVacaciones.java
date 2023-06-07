@@ -81,7 +81,9 @@ public class PaqueteVacaciones {
    * Lista de destinos populares.
    */
   private static ArrayList<Destino> popularLoc = new ArrayList<Destino>();
-
+  
+  private ArrayList<AddOn> AddOns=new ArrayList<>();
+  
   /**
    * constructor.
    *
@@ -144,6 +146,9 @@ public class PaqueteVacaciones {
   public double calculateCost() {
     double cost = (this.baseCost + this.penalty)
         * (1 - this.descuento);
+    for (AddOn a: this.AddOns) {
+         cost += a.getPrecio();
+    }
     return cost;
   }
 
@@ -295,5 +300,13 @@ public class PaqueteVacaciones {
   public static void setPopularLoc(final ArrayList<Destino> destinosPopulares) {
     PaqueteVacaciones.popularLoc = destinosPopulares;
   }
+
+public ArrayList<AddOn> getAddOns() {
+	return AddOns;
+}
+
+public void setAddOns(ArrayList<AddOn> addOns) {
+	AddOns = addOns;
+}
 
 }
