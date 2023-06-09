@@ -89,7 +89,7 @@ public class Main {
            + n.getNombre() + "? (si, no) ");
 
         final String res = scanner.nextLine();
-        if (res.equals("si")) {
+        if ("si".equals(res)) {
             test.getAddOns().add(n);
         }
 

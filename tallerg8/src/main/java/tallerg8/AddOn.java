@@ -1,14 +1,14 @@
 package tallerg8;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class AddOn {
 	private String nombre;
 	private int precio;
 	
-	private static ArrayList<AddOn> addOns=new ArrayList<>();
-	
-	public AddOn(String name, int price) {
+	private static List<AddOn> addOns=new ArrayList<>();
+		public AddOn(String name, int price) {
 		super();
 		this.nombre = name;
 		this.precio = price;
@@ -25,10 +25,10 @@ public class AddOn {
 	public void setPrecio(int price) {
 		this.precio = price;
 	}
-	public static ArrayList<AddOn> getAddOns() {
+	public static List<AddOn> getAddOns() {
 		return addOns;
 	}
-	public static void setAddOns(ArrayList<AddOn> addOns) {
+	public static void setAddOns(List<AddOn> addOns) {
 		AddOn.addOns = addOns;
 	}
 	

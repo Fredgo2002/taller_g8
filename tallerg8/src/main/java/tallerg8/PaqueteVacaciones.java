@@ -1,6 +1,7 @@
 package tallerg8;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class PaqueteVacaciones {
   /**
@@ -72,17 +73,17 @@ public class PaqueteVacaciones {
   /**
    * penalidades.
    */
-  private double penalty = 0;
+  private double penalty;
   /**
    * nombre del destino.
    */
-  private double descuento = 0;
+  private double descuento;
   /**
    * Lista de destinos populares.
    */
-  private static ArrayList<Destino> popularLoc = new ArrayList<Destino>();
+  private static List<Destino> popularLoc = new ArrayList<Destino>();
   
-  private ArrayList<AddOn> AddOns=new ArrayList<>();
+  private List<AddOn> AddOns=new ArrayList<>();
   
   /**
    * constructor.
@@ -288,7 +289,7 @@ public class PaqueteVacaciones {
    * @return
    *         arraylist
    */
-  public static ArrayList<Destino> getPopularLoc() {
+  public static List<Destino> getPopularLoc() {
     return popularLoc;
   }
 
@@ -297,15 +298,15 @@ public class PaqueteVacaciones {
    *
    * @param destinosPopulares
    */
-  public static void setPopularLoc(final ArrayList<Destino> destinosPopulares) {
+  public static void setPopularLoc(final List<Destino> destinosPopulares) {
     PaqueteVacaciones.popularLoc = destinosPopulares;
   }
 
-public ArrayList<AddOn> getAddOns() {
+public List<AddOn> getAddOns() {
 	return AddOns;
 }
 
-public void setAddOns(ArrayList<AddOn> addOns) {
+public void setAddOns(List<AddOn> addOns) {
 	AddOns = addOns;
 }
 
